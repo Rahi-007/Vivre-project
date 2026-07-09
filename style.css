@@ -58,10 +58,59 @@ html {
 ::-webkit-scrollbar-thumb {
     background-color: var(--gray-800);
 }
-*{
+
+* {
     font-family: var(--font-1);
     font-weight: 300;
 }
-.f2{
+
+.f2 {
     font-family: var(--font-2);
+}
+
+/*----------{  Clients card style  }----------*/
+.clients-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.clients-slider::before,
+.clients-slider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.clients-slider::before {
+    left: 0;
+    background: linear-gradient(to right, white, transparent);
+}
+
+.clients-slider::after {
+    right: 0;
+    background: linear-gradient(to left, white, transparent);
+}
+
+.clients-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 28s linear infinite;
+}
+
+.clients-slider:hover .clients-track {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
 }
