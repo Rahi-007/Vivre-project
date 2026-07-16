@@ -1,7 +1,7 @@
 //--------------{  Doctype.js  }--------------//
 
 AOS.init({
-    once: false,
+    once: true,
     duration: 1000,
     easing: "ease-out",
 });
